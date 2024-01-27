@@ -96,3 +96,24 @@ function cari($keyword)
   }
   return $datas;
 }
+
+function login($data)
+{
+  $conn = koneksi();
+
+  $username = htmlspecialchars($data['username']);
+  $password = htmlspecialchars($data['password']);
+
+  if (query("SELECT * FROM user WHERE username = '$username' && password = '$password'")) {
+    // set session
+    $_SESSION['login'] = true;
+
+
+    header("Location: index.php");
+  } else {
+    return [
+      'error' => true,
+      'pesan' => 'Username / Password Salah'
+    ];
+  }
+}
