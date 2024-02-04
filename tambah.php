@@ -63,6 +63,7 @@ if (isset($_POST['tambah'])) {
         <button type="submit" name="tambah">Tambah Data</button>
       </li>
     </ul>
+    <a href="index.php">Kembali ke home</a>
   </form>
 </body>
 
